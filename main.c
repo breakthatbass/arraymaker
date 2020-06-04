@@ -23,12 +23,18 @@ int main(int argc, char *argv[])
 {
 
   int c, i, len, file_line_count;
-  int nums[101]; // array to transfer ints into after collecting
 
 
-  if (argc != 2) {
+  if (argc < 2) {
     printf("usage: arraymaker file.ext\n");
     return 1;
+  }
+
+  if (strcmp(argv[1], "create") == 0 && argc == 4) {
+    char *file_out = argv[3];
+    int length = atoi(argv[2]);
+    create_file(file_out, length);
+    exit(0);
   }
 
   char *infile = argv[1];
@@ -40,32 +46,31 @@ int main(int argc, char *argv[])
   // also, it needs memory allocated for both the length of the array
   // but also the length of each element which is what the 100 is.
   char line[file_line_count][100];
+  int nums[file_line_count]; // array to transfer ints into after collecting
 
   // make sure the file exists or can be opened
   if (fp == NULL) {
-    printf("could not open file %s\n", infile);
+    printf("could not open file in main %s\n", infile);
     return 2;
   }
 
   // go through each line in file and append to line array
   i = 0;
-  while (fgets(line[i], 101, fp)) {
+  while (fgets(line[i], file_line_count, fp)) {
     line[i][strlen(line[i]) - 1] = '\0';
     i++;
   }
 
   len = sizeof(line)/sizeof(line[0]);
-
-  for(i = 0; i < len; ++i) {
-        nums[i] = atoi(line[i]); // convert each element to int
-  }
-  //char_to_int(*line, nums);
-
-    // print from the nums array
-  for(i = 0; i < 100; ++i) {
-    printf(" %d\n", nums[i]);
+  // convert each element to int and copy into nums array
+  for (i = 0; i < len; ++i) {
+        nums[i] = atoi(line[i]);
   }
 
+  // print for testing
+  for (i = 0; i < len; ++i) {
+       printf("%d\n", nums[i]);
+  }
   fclose(fp);
 
   return 0;

@@ -13,7 +13,7 @@ int count_lines(char *file)
 
     fp = fopen(file, "r");
     if (fp == NULL) {
-        printf("Could not open file %s", file);
+        printf("Could not open file in count lines %s\n", file);
         return 1;
     }
 
