@@ -30,6 +30,7 @@ int main(int argc, char *argv[])
     return 1;
   }
 
+  // create command
   if (strcmp(argv[1], "create") == 0 && argc == 4) {
     char *file_out = argv[3];
     int length = atoi(argv[2]);

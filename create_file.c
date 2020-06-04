@@ -8,12 +8,10 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
 #include <time.h>
 
 void create_file(char *file, int len)
 {
-  // when loop ends close file
   int i, number, lower, upper;
   char num_str;
   FILE *fp;
