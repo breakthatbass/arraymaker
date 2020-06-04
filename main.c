@@ -56,16 +56,15 @@ int main(int argc, char *argv[])
 
   len = sizeof(line)/sizeof(line[0]);
 
-  for(i = 0; i < len; ++i)
-    {
+  for(i = 0; i < len; ++i) {
         nums[i] = atoi(line[i]); // convert each element to int
-    }
+  }
+  //char_to_int(*line, nums);
 
     // print from the nums array
-    for(i = 0; i < len; ++i)
-      {
-          printf(" %d\n", nums[i]);
-      }
+  for(i = 0; i < 100; ++i) {
+    printf(" %d\n", nums[i]);
+  }
 
   fclose(fp);
 

@@ -7,8 +7,8 @@ endif
 
 all: arraymaker
 
-arraymaker: main.c count_lines.c
-	$(CC) -o $(NAME) main.c count_lines.c $(CFLAGS)
+arraymaker: main.c count_lines.c char_to_int.c
+	$(CC) -o $(NAME) main.c count_lines.c char_to_int.c $(CFLAGS)
 
 install: arraymaker
 	mkdir -p $(DESTDIR)$(PREFIX)/bin
