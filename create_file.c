@@ -1,3 +1,11 @@
+/*
+  Takes a file  and an int as an argument
+  the file arg is the name of the file to be created
+  the len arg is the length of the file -> i.e. the amount of lines of random numbers
+
+  it then generate random numbers and prints them to the file
+*/
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
