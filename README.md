@@ -57,7 +57,7 @@ Right now, the ```load``` command can be used like this:
 ```
 $ arraymaker load file.txt
 ```
-It will take in the file you've created and print each line in the terminal.
+It will take in the file you've created and print each element in the array in the terminal.
 
 ### TODO
 1. Build connection to outside files
