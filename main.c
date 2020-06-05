@@ -23,7 +23,7 @@ int main(int argc, char *argv[])
 {
 
   int c, i, len, file_line_count;
-  int *outer_array;
+  int *outer_array; // variable to hold array returned by load_array()
 
 
   if (argc < 2) {
