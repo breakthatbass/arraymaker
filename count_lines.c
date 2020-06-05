@@ -1,9 +1,6 @@
 /*
   Takes a file as an argument
   and returns the number of lines in file
-
-  essentially this function is just malloc() for a file length size
-  ...only because i couldn't get the program to compile using malloc()
 */
 
 #include <stdio.h>
