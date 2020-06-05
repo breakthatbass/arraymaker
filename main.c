@@ -25,7 +25,6 @@ int main(int argc, char *argv[])
   int c, i, len, file_line_count;
   int *outer_array; // variable to hold array returned by load_array()
 
-
   if (argc < 2) {
     printf("usage: arraymaker command subcommand(s)\n\n");
     return 1;
@@ -35,7 +34,6 @@ int main(int argc, char *argv[])
 
   if (strcmp(command, "help") == 0) {
     printf("\ncommands:\n\ncreate arraylength file.txt\nload file.txt algorithmfile.c\n");
-    printf("\nnote: the algorithm file must accept arguments and must be the entry point to the algorithm(s) if they are in external files\n\n");
   }
 
   // create command
