@@ -50,7 +50,7 @@ $ arraymaker load file.txt algorithm.c
 ```
 The ```algorithm.c``` file is your file that has the algorithm in it.
 
-At this moment, however, the program is not finished. It is still somewhat useable.
+At this moment, however, the program is not finished but it is still somewhat useable.
 The ```create``` command is fully usable but the ```load``` command is only partially built.
 
 Right now, the ```load``` command can be used like this:
