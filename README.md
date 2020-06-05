@@ -6,7 +6,7 @@ You can manually write arrays of 10 or so elements to test your algorithms to se
 
 The bigger the arrays to sort are, the more noticable the timing differences can be.
 
-Arraymaker creates arrays that are sized based on user input so they can be 20 elements or 10,000 elements or more.
+Arraymaker creates arrays that are sized based on user input so they can be 20 elements or 10,000 elements or more. Since the program saves the array, the same unsorted array can used with different algorithms to return more useful times when comparing them.
 
 ## installation
 ```
