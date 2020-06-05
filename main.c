@@ -23,56 +23,39 @@ int main(int argc, char *argv[])
 {
 
   int c, i, len, file_line_count;
+  int *outer_array;
 
 
   if (argc < 2) {
-    printf("usage: arraymaker file.ext\n");
+    printf("usage: arraymaker command subcommand(s)\n\n");
     return 1;
   }
 
+  char *command = argv[1];
+
+  if (strcmp(command, "help") == 0) {
+    printf("\ncommands:\n\ncreate arraylength file.txt\nload file.txt algorithmfile.c\n");
+    printf("\nnote: the algorithm file must accept arguments and must be the entry point to the algorithm(s) if they are in external files\n\n");
+  }
+
   // create command
-  if (strcmp(argv[1], "create") == 0 && argc == 4) {
+  if (strcmp(command, "create") == 0 && argc == 4) {
     char *file_out = argv[3];
     int length = atoi(argv[2]);
     create_file(file_out, length);
     exit(0);
   }
 
-  char *infile = argv[1];
-  FILE *fp = fopen(infile, "r");
+  // load array command
+  if (strcmp(command, "load") == 0 && argc == 3) { // set to 4 after testing
+    char *infile = argv[2];
+    outer_array = load_array(infile);
 
-  file_line_count = count_lines(infile);
-
-  // each line comes in as a char so it needs a char array
-  // also, it needs memory allocated for both the length of the array
-  // but also the length of each element which is what the 100 is.
-  char line[file_line_count][100];
-  int nums[file_line_count]; // array to transfer ints into after collecting
-
-  // make sure the file exists or can be opened
-  if (fp == NULL) {
-    printf("could not open file in main %s\n", infile);
-    return 2;
+    for (i = 0; i < 20; ++i) {
+         printf("main func: %d\n", *(outer_array + i));
+    }
+    exit(0);
   }
-
-  // go through each line in file and append to line array
-  i = 0;
-  while (fgets(line[i], file_line_count, fp)) {
-    line[i][strlen(line[i]) - 1] = '\0';
-    i++;
-  }
-
-  len = sizeof(line)/sizeof(line[0]);
-  // convert each element to int and copy into nums array
-  for (i = 0; i < len; ++i) {
-        nums[i] = atoi(line[i]);
-  }
-
-  // print for testing
-  for (i = 0; i < len; ++i) {
-       printf("%d\n", nums[i]);
-  }
-  fclose(fp);
 
   return 0;
 }
