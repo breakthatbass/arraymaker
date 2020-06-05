@@ -41,6 +41,7 @@ int *load_array(char *file)
         nums[i] = atoi(line[i]);
   }
   fclose(fp);
+  free(nums);
 
   return nums;
 }
