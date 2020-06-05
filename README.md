@@ -12,7 +12,6 @@ Arraymaker creates arrays that are sized based on user input so they can be 20 e
 ```
 $ git clone https://github.com/breakthatbass/arraymaker.git
 ```
-It doesn't matter what directory you download it in as it ultimately gets installed in.
 
 #### compile
 ```
