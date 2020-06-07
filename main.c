@@ -47,10 +47,11 @@ int main(int argc, char *argv[])
   // load array command
   if (strcmp(command, "load") == 0 && argc == 3) { // set to 4 after testing
     char *infile = argv[2];
-    outer_array = load_array(infile);
+    outer_array = load_array(infile, &len);
 
-    for (i = 0; i < 20; ++i) {
-         printf("main func: %d\n", *(outer_array + i));
+
+    for (i = 0; i < len; ++i) {
+         printf("%d: %d\n", i, *(outer_array + i));
     }
     exit(0);
   }

@@ -11,9 +11,9 @@
 
 // load array takes a file, parses it, and load it into an array
 // it then calls a function from another file
-int *load_array(char *file)
+int *load_array(char *file, int *file_length)
 {
-  int i, len, file_line_count;
+  int i, file_line_count;
   static int *nums; // array to then transfer to
 
   FILE *fp = fopen(file, "r");
@@ -23,6 +23,7 @@ int *load_array(char *file)
   }
 
   file_line_count = count_lines(file); //get the amount of lines from file
+  *file_length = file_line_count;
   // allocate memory for the nums array based on the size of the file
   nums = (int*)malloc(file_line_count * sizeof(int));
   // each line comes in as a char so it needs a char array
@@ -35,13 +36,11 @@ int *load_array(char *file)
     i++;
   }
 
-  len = sizeof(line)/sizeof(line[0]);
   // convert each element to int and copy into nums array
-  for (i = 0; i < len; ++i) {
+  for (i = 0; i < file_line_count; ++i) {
         nums[i] = atoi(line[i]);
   }
   fclose(fp);
-  free(nums);
-
+  
   return nums;
 }
