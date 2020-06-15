@@ -45,16 +45,26 @@ int main(int argc, char *argv[])
   }
 
   // load array command
-  if (strcmp(command, "load") == 0 && argc == 3) { // set to 4 after testing
+  if (strcmp(command, "load") == 0 && argc == 4) { // set to 4 after testing
     char *infile = argv[2];
     outer_array = load_array(infile, &len);
+    char *algorithm = argv[3];
 
+      if (strcmp(algorithm, "shellsort") == 0) {
+        shellsort(outer_array, len);
+        exit(0);
+      }
+      else if (strcmp(algorithm, "bubblesort") == 0) {
+        bubblesort(outer_array, len);
+        exit(0);
+      }
 
-    for (i = 0; i < len; ++i) {
-         printf("%d: %d\n", i+1, *(outer_array + i));
-    }
-    exit(0);
   }
 
+   /*
+        for (i = 0; i < len; ++i) {
+         printf("%d: %d\n", i+1, *(outer_array + i));
+    } */
+  
   return 0;
 }
