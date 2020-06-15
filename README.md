@@ -46,18 +46,13 @@ $ arraymaker create num-of-elements file.txt
 ```load``` loads in the numbers from the ```.txt``` file and stores them into an array.
 
 ```
-$ arraymaker load file.txt algorithm.c
+$ arraymaker load file.txt algorithm
 ```
-The ```algorithm.c``` file is your file that has the algorithm in it.
+The ```algorithm``` file is your file that has the algorithm in it.
 
-At this moment, however, the program is not finished but it is still somewhat useable.
-The ```create``` command is fully usable but the ```load``` command is only partially built.
+There is a directory called 'algorithms' that currently has a shell sort file and a bubble sort file. You can add your own to the folder. Just add the function to the ```helpers.h``` file and the ```Makefile```. 
 
-Right now, the ```load``` command can be used like this:
-```
-$ arraymaker load file.txt
-```
-It will take in the file you've created and print each element in the array in the terminal.
+To get a sense of how this works, comparing the shell sort and bubble sort algorithms, shell sort is able to sort an array of 400,000 elements in about 0.5 seconds while bubblesort takes about 1.5 minutes to sort the same array. 
 
 ### TODO
 1. Build connection to outside files
