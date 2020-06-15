@@ -19,6 +19,7 @@
 #include <stdlib.h>
 #include "helpers.h"
 
+// for use with qsort()
 int cmpfunc (const void * a, const void * b) 
 {
   return ( *(int*)a - *(int*)b );
@@ -38,7 +39,7 @@ int main(int argc, char *argv[])
   char *command = argv[1];
 
   if (strcmp(command, "help") == 0) {
-    printf("\ncommands:\n\ncreate arraylength file.txt\nload file.txt algorithmfile.c\n");
+    printf("\ncommands:\n\ncreate arraylength file.txt\nsort file.txt algorithmfile.c\n");
   }
 
   // create command
@@ -49,8 +50,8 @@ int main(int argc, char *argv[])
     return 0;
   }
 
-  // load array command
-  if (strcmp(command, "load") == 0 && argc == 4) { // set to 4 after testing
+// SORTING
+  else if (strcmp(command, "sort") == 0 && argc == 4) { // set to 4 after testing
     char *infile = argv[2];
     outer_array = load_array(infile, &len);
     char *algorithm = argv[3];
@@ -58,19 +59,32 @@ int main(int argc, char *argv[])
 // SHELLSORT
       if (strcmp(algorithm, "shellsort") == 0) {
         shellsort(outer_array, len);
-        return 0;
+        //return 0;
       }
 // BUBBLESORT
       else if (strcmp(algorithm, "bubblesort") == 0) {  
         bubblesort(outer_array, len);
-        return 0;
+        //return 0;
       }
 // QUICKSORT
-      if (strcmp(algorithm, "quicksort") == 0) {
+      else if (strcmp(algorithm, "quicksort") == 0) {
+        // qsort() comes from the C standard library and will
+        // be better than any version I could write
         qsort(outer_array, len, sizeof(int), cmpfunc);
-        return 0;
+        //return 0;
+      }
+// wrong sort
+      else {
+        printf("ERROR: %s is not available as an option. You can add your own to the files\n", algorithm);
+        return 2;
       }
 
+  }
+  else {
+    printf("Usage: arraymaker\n");
+    printf("\t\tcreate num-of-elements file.txt\n");
+    printf("\t\tsort file.txt algorithm\n");
+    return 3;
   }
   for (i = 0; i < len; ++i) {
     printf("%d: %d\n", i+1, *(outer_array + i));
