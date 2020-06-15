@@ -51,7 +51,7 @@ int main(int argc, char *argv[])
 
 
     for (i = 0; i < len; ++i) {
-         printf("%d: %d\n", i, *(outer_array + i));
+         printf("%d: %d\n", i+1, *(outer_array + i));
     }
     exit(0);
   }

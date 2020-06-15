@@ -37,7 +37,7 @@ There a few actions to be done before loading up your algorithms...
 ```
 $ arraymaker create num-of-elements file.txt
 ```
-```num-of-elements```: this is where you put the amount of elements you want.
+```num-of-elements```: this is where you put the amount of elements you want. There is limit to the array length because of memory restrictions. This limit will be different on each system. My system, which has 8GB of RAM, faults with anything over 410,000 lines. 
 
 ```file.txt```: you can name this anything you want and it doesn't necessarily need to be a ```.txt```...but why do any other type?
 

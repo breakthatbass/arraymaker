@@ -18,7 +18,7 @@ void create_file(char *file, int len)
 
   // these variables dictate the range of random numbers
   lower = 0;
-  upper = 999999;
+  upper = 99999;
 
   // open file in append mode
   fp = fopen(file, "w");
