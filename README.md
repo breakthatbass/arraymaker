@@ -58,3 +58,5 @@ This works best with the ```time``` command.
 ```
 $ time arraymaker sort file.txt algorithm
 ```
+### TODO:
+Add more algorithms
