@@ -19,6 +19,11 @@
 #include <stdlib.h>
 #include "helpers.h"
 
+int cmpfunc (const void * a, const void * b) 
+{
+  return ( *(int*)a - *(int*)b );
+}
+
 int main(int argc, char *argv[])
 {
 
@@ -41,7 +46,7 @@ int main(int argc, char *argv[])
     char *file_out = argv[3];
     int length = atoi(argv[2]);
     create_file(file_out, length);
-    exit(0);
+    return 0;
   }
 
   // load array command
@@ -50,21 +55,26 @@ int main(int argc, char *argv[])
     outer_array = load_array(infile, &len);
     char *algorithm = argv[3];
 
+// SHELLSORT
       if (strcmp(algorithm, "shellsort") == 0) {
         shellsort(outer_array, len);
-        exit(0);
+        return 0;
       }
-      else if (strcmp(algorithm, "bubblesort") == 0) {
+// BUBBLESORT
+      else if (strcmp(algorithm, "bubblesort") == 0) {  
         bubblesort(outer_array, len);
-        exit(0);
+        return 0;
+      }
+// QUICKSORT
+      if (strcmp(algorithm, "quicksort") == 0) {
+        qsort(outer_array, len, sizeof(int), cmpfunc);
+        return 0;
       }
 
   }
-
-   /*
-        for (i = 0; i < len; ++i) {
-         printf("%d: %d\n", i+1, *(outer_array + i));
-    } */
+  for (i = 0; i < len; ++i) {
+    printf("%d: %d\n", i+1, *(outer_array + i));
+  } 
   
   return 0;
 }
