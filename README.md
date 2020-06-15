@@ -50,7 +50,7 @@ $ arraymaker load file.txt algorithm
 ```
 The ```algorithm``` file is your file that has the algorithm in it.
 
-There is a directory called 'algorithms' that currently has a shell sort file and a bubble sort file. You can add your own to the folder. Just add the function to the ```helpers.h``` file and the ```Makefile```. 
+There is a directory called 'algorithms' that currently has a shell sort file and a bubble sort file. You can add your own to the folder. Just add the function to the ```helpers.h``` file and the ```Makefile```. And lastly, add it to the commands in the ```main.c``` file.
 
 To get a sense of how this works, comparing the shell sort and bubble sort algorithms, shell sort is able to sort an array of 400,000 elements in about 0.5 seconds while bubblesort takes about 1.5 minutes to sort the same array. 
 
