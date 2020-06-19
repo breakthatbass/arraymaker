@@ -61,3 +61,5 @@ $ time arraymaker sort file.txt algorithm
 Add more algorithms
 
 Make it possible to create and test partially sorted arrays and mostly sorted arrays
+
+add print ability to be turned on or off
