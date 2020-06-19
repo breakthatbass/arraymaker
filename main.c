@@ -19,12 +19,15 @@
 #include <stdlib.h>
 #include "helpers.h"
 
+
+
 // for use with qsort()
+/*
 int cmpfunc (const void * a, const void * b) 
 {
   return ( *(int*)a - *(int*)b );
 }
-
+*/
 int main(int argc, char *argv[])
 {
 
@@ -71,6 +74,11 @@ int main(int argc, char *argv[])
         // qsort() comes from the C standard library and will
         // be better than any version I could write
         qsort(outer_array, len, sizeof(int), cmpfunc);
+        //return 0;
+      }
+// GNOMESORT      
+      else if (strcmp(algorithm, "gnomesort") == 0) {  
+        gnome_sort(outer_array, len);
         //return 0;
       }
 // wrong sort
