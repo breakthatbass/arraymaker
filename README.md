@@ -28,11 +28,10 @@ $ make install
 Once installed, Arraymaker can be used from any directory like any other command, however, the number file you create and use must be in the directory you are executing the commands from. 
 
 ### commands:
-There a few actions to be done before loading up your algorithms...
 
 #### create
 
-```create``` creates the numbers to load into the array. It stores them in a seperate file to pull from when loading it into the array. This way you can use the same numbers to sort between different algorithms to more accurately judge timing.
+```create``` creates the numbers to load into the array. It stores them in a seperate file to pull from when loading it into the array. This way you can use the same numbers to sort between different algorithms to more accurately judge timing. This is the first step and has to be done before using the ```sort``` command.
 
 ```
 $ arraymaker create num-of-elements file.txt
@@ -41,7 +40,7 @@ $ arraymaker create num-of-elements file.txt
 
 ```file.txt```: you can name this anything you want and it doesn't necessarily need to be a ```.txt```...but why do any other type?
 
-#### load
+#### sort
 
 ```sort``` loads in the numbers from the ```.txt``` file and stores them into an array.
 
