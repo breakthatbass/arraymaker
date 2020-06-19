@@ -1,4 +1,4 @@
-/*
+/***
 
   This file is the entry point to the program.
 
@@ -12,12 +12,12 @@
   and searching algorithms without very large arrays so it doesn't seem so
   instantaneous.
 
-*/
+***/
 
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
-#include "helpers.h"
+#include "arraymaker.h"
 
 
 

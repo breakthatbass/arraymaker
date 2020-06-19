@@ -7,7 +7,6 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
-#include "helpers.h"
 
 // load array takes a file, parses it, and load it into an array
 // it then calls a function from another file
