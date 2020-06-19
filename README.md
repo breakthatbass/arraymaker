@@ -60,3 +60,4 @@ $ time arraymaker sort file.txt algorithm
 ```
 ### TODO:
 Add more algorithms
+Make it possible to create and test partially sorted arrays and mostly sorted arrays
