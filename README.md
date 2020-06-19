@@ -25,7 +25,7 @@ $ make install
 
 ## Usage
 
-Once installed, Arraymaker can be used from any directory like any other command.
+Once installed, Arraymaker can be used from any directory like any other command, however, the number file you create and use must be in the directory you are executing the commands from. 
 
 ### commands:
 There a few actions to be done before loading up your algorithms...
