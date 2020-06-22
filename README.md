@@ -1,6 +1,6 @@
 # Arraymaker
 
-Arraymaker is used to create very large arrays of random numbers that are randomly sorted for the purpose of using them to learn about timing with sorting algorithms. Arraymaker is meant to be used alongside the UNIX Time command.
+Arraymaker is used to create very large arrays of random numbers that are randomly sorted for the purpose of using them to learn about timing with sorting algorithms. Arraymaker has built in timing.
 
 You can easily manually write small arrays to test your algorithms to see if they work, however, small arrays are not so helpful to see the timing differences between algorithms.
 
@@ -53,10 +53,6 @@ There is a directory called 'algorithms' that holds the algorithms. You can add 
 
 To get a sense of how this works, comparing the shell sort and bubble sort algorithms, shell sort is able to sort an array of 400,000 elements in about 0.5 seconds while bubblesort takes about 1.5 minutes to sort the same array. 
 
-This works best with the ```time``` command.
-```
-$ time arraymaker sort file.txt algorithm
-```
 Currently, the algorithms available for use are bubblesort, shellsort, gnomesort, and quicksort. 
 
 ### TODO:
