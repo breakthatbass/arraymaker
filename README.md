@@ -47,17 +47,15 @@ $ arraymaker create num-of-elements file.txt
 ```
 $ arraymaker sort file.txt algorithm
 ```
-The ```algorithm``` file is your file that has the algorithm in it.
+```algorithm``` is just the name of the algorithm to use. Currently, the algorithms available for use are bubblesort, shellsort, gnomesort, and quicksort. 
 
-There is a directory called 'algorithms' that holds the algorithms. You can add your own to the folder. Just add the function to the ```helpers.h``` file and the ```Makefile```. And lastly, add it to the commands in the ```main.c``` file.
+There is a directory called 'algorithms' that holds the algorithms. You can add your own to the folder or change what I have there. To add your own, you'll need to add the function prototype to the ```arraymaker.h``` file, add the file name to the ```Makefile```, and lastly, add it to the commands in the ```main.c``` file.
 
-To get a sense of how this works, comparing the shell sort and bubble sort algorithms, shell sort is able to sort an array of 400,000 elements in about 0.5 seconds while bubblesort takes about 1.5 minutes to sort the same array. 
-
-Currently, the algorithms available for use are bubblesort, shellsort, gnomesort, and quicksort. 
+To get a sense of how this works, comparing the quicksort and bubble sort algorithms, quicksort is able to sort an array of 400,000 elements in about 0.5 seconds while bubblesort takes about 108 seconds to sort the same array. 
 
 ### TODO:
-Add more algorithms
+- Add more algorithms
 
-Make it possible to create and test partially sorted arrays and mostly sorted arrays
+- Make it possible to create and test partially sorted arrays and mostly sorted arrays
 
-add print ability to be turned on or off
+- add print ability to be turned on or off
