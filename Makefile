@@ -7,8 +7,8 @@ endif
 
 all: arraymaker
 
-arraymaker: main.c count_lines.c create_file.c load_array.c helpers.c algorithms/shellsort.c algorithms/bubblesort.c algorithms/gnomesort.c
-	$(CC) -o $(NAME) main.c count_lines.c create_file.c load_array.c helpers.c algorithms/shellsort.c algorithms/bubblesort.c algorithms/gnomesort.c $(CFLAGS)
+arraymaker: src/main.c src/count_lines.c src/create_file.c src/load_array.c src/helpers.c algorithms/shellsort.c algorithms/bubblesort.c algorithms/gnomesort.c
+	$(CC) -o $(NAME) src/main.c src/count_lines.c src/create_file.c src/load_array.c src/helpers.c algorithms/shellsort.c algorithms/bubblesort.c algorithms/gnomesort.c $(CFLAGS)
 
 install: arraymaker
 	mkdir -p $(DESTDIR)$(PREFIX)/bin
