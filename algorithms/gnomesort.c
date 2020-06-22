@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "../helpers.h"
+#include "../arraymaker.h"
 
 void gnome_sort(int *arr, int len)
 {

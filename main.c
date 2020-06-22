@@ -41,6 +41,7 @@ int main(int argc, char *argv[])
     char *file_out = argv[3];
     int length = atoi(argv[2]);
     create_file(file_out, length);
+    printf("%s file successfully created\n", file_out);
     return 0;
   }
 

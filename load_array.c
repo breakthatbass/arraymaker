@@ -8,6 +8,8 @@
 #include <string.h>
 #include <stdlib.h>
 
+#include "arraymaker.h"
+
 // load array takes a file, parses it, and load it into an array
 // it then calls a function from another file
 int *load_array(char *file, int *file_length)
