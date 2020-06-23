@@ -37,7 +37,7 @@ Once installed, Arraymaker can be used from any directory like any other command
 $ arraymaker create file array-length
 ```
 
-```file```: you can name this anything you want. It becomes the name of the file created that hold the numbers for reusing the array.
+```file```: you can name this anything you want. It becomes the name of the file created that hold the numbers for reusing the array. You don't need to use a file extension but you can if you want to. Most file types seem to work fine.
 
 ```array-length```: this is where you put the amount of elements you want in the array. It's just a number. There is limit to the array length because of memory restrictions. This limit will be different on each system. My system, which has 8GB of RAM, faults with anything over ~1,300,000 lines. You don't need a million elements to get a sense of timing differences though. 100,000 elements works well enough as anymore than that really causes the slower algorithms to take a painfully long time to sort. 
 
