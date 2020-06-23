@@ -12,6 +12,7 @@ int *load_array(char *file, int *file_length)
 {
   int i, file_line_count;
   static int *nums; // array to then transfer to
+ 
 
   FILE *fp = fopen(file, "r");
   if (fp == NULL) {
@@ -24,8 +25,9 @@ int *load_array(char *file, int *file_length)
 
   // allocate memory for the nums array based on the size of the file
   nums = (int*)malloc(file_line_count * sizeof(int));
+
   // each line comes in as a char so it needs a char array
-  char line[file_line_count][20];
+  char line[file_line_count][6];
 
   // go through each line in file and append to line array
   i = 0;
