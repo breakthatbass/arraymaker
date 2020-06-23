@@ -2,27 +2,27 @@
   Takes a file as an argument
   and returns the number of lines in file
 */
-
 #include <stdio.h>
 
 int count_lines(char *file)
 {
   FILE *fp;
-  int count = 0;  // Line counter (result)
-  char c;  // To store a character read from file
+  int count = 0;  // Line counter
+  char c;  // To store the character read from file
 
-    fp = fopen(file, "r");
-    if (fp == NULL) {
-        printf("Could not open file in count lines %s\n", file);
-        return 1;
+  fp = fopen(file, "r");
+  if (fp == NULL) {
+      printf("Could not open file in count lines %s\n", file);
+      return 1;
+  }
+
+  // Extract characters from file and store in char c
+  while ((c = getc(fp)) && c != EOF) {
+    if (c == '\n') { 
+      count++;
     }
+  }
 
-    // Extract characters from file and store in character c
-   for (c = getc(fp); c != EOF; c = getc(fp))
-       if (c == '\n') { // Increment count if this character is newline
-           count++;
-       }
-
-   fclose(fp);
-   return count;
+  fclose(fp);
+  return count;
 }

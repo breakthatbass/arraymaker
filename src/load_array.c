@@ -3,15 +3,11 @@
   reads it line by line and loads each line into an array
   returns a pointer to the array
 */
-
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
-
 #include "arraymaker.h"
 
-// load array takes a file, parses it, and load it into an array
-// it then calls a function from another file
 int *load_array(char *file, int *file_length)
 {
   int i, file_line_count;
@@ -25,6 +21,7 @@ int *load_array(char *file, int *file_length)
 
   file_line_count = count_lines(file); //get the amount of lines from file
   *file_length = file_line_count;
+
   // allocate memory for the nums array based on the size of the file
   nums = (int*)malloc(file_line_count * sizeof(int));
   // each line comes in as a char so it needs a char array

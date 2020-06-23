@@ -1,7 +1,7 @@
-/*** 
- * some of the algorithms are dependent on other functions to run. 
- * this file stores these function
- *  ***/
+/*
+  some of the algorithms are dependent on other functions to run. 
+  this file stores these functions
+*/
 
 // for use with qsort()
 int cmpfunc (const void * a, const void * b) 
