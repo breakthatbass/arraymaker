@@ -31,13 +31,20 @@ int main(int argc, char *argv[])
   char *command = argv[1];
 
   if (strcmp(command, "help") == 0) {
-    printf("\ncommands:\n\ncreate arraylength file.txt\nsort file.txt algorithmfile.c\n");
+    printf("\ncommands:\ncreate file array-length\nsort file algorithm\n");
   }
 
   // create command
   if (strcmp(command, "create") == 0 && argc == 4) {
-    char *file_out = argv[3];
-    int length = atoi(argv[2]);
+    char *file_out = argv[2];
+    int length = atoi(argv[3]);
+
+    // check for correct oderder of arguments
+    if (length == 0) { // atoi returns 0 if the string isn't a string of numbers
+      printf("Unable to create file\n");
+      printf("\ncommands:\ncreate file array-length\nsort file algorithm\n");
+      return 2;
+    }
     create_file(file_out, length);
     printf("%s file successfully created\n", file_out);
     return 0;
@@ -111,13 +118,13 @@ int main(int argc, char *argv[])
         // end timing
         printf("%s sorted %d elements in %f seconds\n", algorithm, len, time_taken);
         free(outer_array);
-        return 0;
+        //return 0;
       }
 
 // wrong sort
       else {
         printf("ERROR: %s is not available as an option. You can add your own to the files\n", algorithm);
-        return 2;
+        return 3;
       }
   }
 
@@ -128,10 +135,10 @@ int main(int argc, char *argv[])
     return 3;
   }
   // no printing for now
-  /*
+  
   for (i = 0; i < len; ++i) {
     printf("%d: %d\n", i+1, *(outer_array + i));
   } 
-  */
+  
   return 0;
 }
