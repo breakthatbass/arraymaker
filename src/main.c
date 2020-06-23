@@ -61,6 +61,7 @@ int main(int argc, char *argv[])
         double time_taken = ((double)t)/CLOCKS_PER_SEC; // in seconds
         // end timing
         printf("%s sorted %d elements in %f seconds\n", algorithm, len, time_taken);
+        free(outer_array);
         return 0;
       }
 
@@ -76,6 +77,7 @@ int main(int argc, char *argv[])
         double time_taken = ((double)t)/CLOCKS_PER_SEC; // in seconds
         // end timing
         printf("%s sorted %d elements in %f seconds\n", algorithm, len, time_taken);
+        free(outer_array);
         return 0;
       }
 
@@ -93,7 +95,8 @@ int main(int argc, char *argv[])
         double time_taken = ((double)t)/CLOCKS_PER_SEC; // in seconds
         // end timing
         printf("%s sorted %d elements in %f seconds\n", algorithm, len, time_taken);
-        //return 0;
+        free(outer_array);
+        return 0;
       }
 // GNOMESORT      
       else if (strcmp(algorithm, "gnomesort") == 0) {  
@@ -107,7 +110,8 @@ int main(int argc, char *argv[])
         double time_taken = ((double)t)/CLOCKS_PER_SEC; // in seconds
         // end timing
         printf("%s sorted %d elements in %f seconds\n", algorithm, len, time_taken);
-        //return 0;
+        free(outer_array);
+        return 0;
       }
 
 // wrong sort
@@ -124,10 +128,10 @@ int main(int argc, char *argv[])
     return 3;
   }
   // no printing for now
-  
+  /*
   for (i = 0; i < len; ++i) {
     printf("%d: %d\n", i+1, *(outer_array + i));
   } 
-  
+  */
   return 0;
 }
