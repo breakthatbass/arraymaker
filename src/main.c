@@ -118,7 +118,7 @@ int main(int argc, char *argv[])
         // end timing
         printf("%s sorted %d elements in %f seconds\n", algorithm, len, time_taken);
         free(outer_array);
-        //return 0;
+        return 0;
       }
 
 // wrong sort
