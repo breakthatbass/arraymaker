@@ -8,6 +8,8 @@ The bigger the arrays to sort are, the more noticable the time differences can b
 
 Arraymaker creates arrays that are sized based on user input so they can be 20 elements or 400,000 elements and potentially more. Since the program saves the array in a file, the same unsorted array can used with different algorithms to return more useful times when comparing them.
 
+Read the article about it [here](https://breakthatbass.github.io/portfolio2020/blog/arraymaker.html).
+
 ## installation
 ```
 $ git clone https://github.com/breakthatbass/arraymaker.git
