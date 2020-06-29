@@ -120,6 +120,21 @@ int main(int argc, char *argv[])
         free(outer_array);
         return 0;
       }
+// INSERTION SORT      
+      else if (strcmp(algorithm, "insertion") == 0) {  
+        printf("Sorting...\n");
+        // start timing
+        clock_t t;
+        t = clock();
+        // call algorithm
+        insertion_sort(outer_array, len);
+        t = clock() - t;
+        double time_taken = ((double)t)/CLOCKS_PER_SEC; // in seconds
+        // end timing
+        printf("%s sorted %d elements in %f seconds\n", algorithm, len, time_taken);
+        free(outer_array);
+        return 0;
+      }
 
 // wrong sort
       else {

@@ -1,5 +1,6 @@
+#include "../src/arraymaker.h"
 
-void insertion_sort(int array[], int n)
+void insertion_sort(int *array, int n)
 {
   int i, key_item, j;
   for (i = 0; i < n; i++) {
