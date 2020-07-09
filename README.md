@@ -13,15 +13,9 @@ Read the article about it [here](https://breakthatbass.github.io/portfolio2020/b
 ## installation
 ```
 $ git clone https://github.com/breakthatbass/arraymaker.git
-```
 
-#### compile
-```
-$ make arraymaker
-```
+$ cd arraymker
 
-#### install
-```
 $ make install
 ```
 
