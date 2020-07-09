@@ -1,16 +1,18 @@
 CC=gcc
 CFLAGS=-g -lm -std=c99 -pedantic
 PREFIX=/usr/local
+SRC_FILES=$(wildcard src/*.c algorithms/*.c)
+
 ifndef NAME
     NAME=arraymaker
 endif
 
-all: arraymaker
+all: $(NAME)
 
-arraymaker: src/main.c src/count_lines.c src/create_file.c src/load_array.c src/helpers.c algorithms/shellsort.c algorithms/bubblesort.c algorithms/gnomesort.c algorithms/insertionsort.c
-	$(CC) -o $(NAME) src/main.c src/count_lines.c src/create_file.c src/load_array.c src/helpers.c algorithms/shellsort.c algorithms/bubblesort.c algorithms/gnomesort.c algorithms/insertionsort.c $(CFLAGS)
+$(NAME): $(SRC_FILES)
+	$(CC) -o $(NAME) $(SRC_FILES) $(CFLAGS)
 
-install: arraymaker
+install: $(NAME)
 	mkdir -p $(DESTDIR)$(PREFIX)/bin
 	cp $< $(DESTDIR)$(PREFIX)/bin/$(NAME)
 
