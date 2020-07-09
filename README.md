@@ -23,9 +23,15 @@ $ make install
 
 Once installed, Arraymaker can be used from any directory like any other command, however, the number file you create and use must be in the directory you are executing the commands from. 
 
-### commands:
+## Commands
 
-#### create
+```
+arraymaker <command> [arg-file] [arg2]
+```
+
+In short, the commands are ```create``` and ```sort```. The first argument is always the file to be used/created. The second argument depends on the command. If ```create``` then [arg2] will be the array length. If ```sort``` then [arg2] will be the algorithm chosen to sort the array.
+
+### create
 
 ```create``` creates the file which holds the numbers to load into the array. This is the first step and has to be done before using the ```sort``` command.
 
@@ -37,7 +43,7 @@ $ arraymaker create file array-length
 
 ```array-length```: this is where you put the amount of elements you want in the array. It's just a number. There is limit to the array length because of memory restrictions. This limit will be different on each system. My system, which has 8GB of RAM, faults with anything over ~1,300,000 lines. You don't need a million elements to get a sense of timing differences though. 100,000 elements works well enough as anymore than that really causes the slower algorithms to take a painfully long time to sort. 
 
-#### sort
+### sort
 
 ```sort``` loads the numbers from the number file into an array then uses it with the algorithm in the argument.
 
