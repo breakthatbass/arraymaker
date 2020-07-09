@@ -1,5 +1,5 @@
 CC=gcc
-CFLAGS=-lm -std=c99 -pedantic
+CFLAGS=-g -lm -std=c99 -pedantic
 PREFIX=/usr/local
 ifndef NAME
     NAME=arraymaker
