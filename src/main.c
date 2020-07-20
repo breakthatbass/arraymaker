@@ -15,6 +15,7 @@
 #include <string.h>
 #include <stdlib.h>
 #include <time.h> 
+#include <getopt.h>
 #include "arraymaker.h"
 
 static void usage() {
@@ -26,44 +27,65 @@ static void usage() {
   exit(EXIT_FAILURE);
 }
 
-int main(int argc, char *argv[])
+int main(int argc, char **argv)
 {
 
-  int c, i, len, file_line_count;
+  int opt, len;
   int *outer_array; // variable to hold array returned by load_array()
+  char *file_name, *algorithm;
 
   if (argc < 2) {
-    printf("usage: arraymaker command subcommand(s)\n\n");
+    usage();
     return 1;
   }
 
-  char *command = argv[1];
+  while ((opt = getopt(argc, argv, "hc:s:")) != -1) {
+    switch(opt) {
 
-  if (strcmp(command, "help") == 0) {
-    printf("\ncommands:\ncreate file array-length\nsort file algorithm\n");
-  }
+      // help: print usage
+      case 'h': 
+        usage();
+        break;
 
-  // create command
-  if (strcmp(command, "create") == 0 && argc == 4) {
-    char *file_out = argv[2];
-    int length = atoi(argv[3]);
+      // create: create file of ints with length based on count
+      case 'c':
+        if (argc != 4) {
+          usage();
+        }
+        file_name = optarg;
+        int count = atoi(argv[3]);
 
-    // check for correct oderder of arguments
-    if (length == 0) { // atoi returns 0 if the string isn't a string of numbers
-      printf("Unable to create file\n");
-      printf("\ncommands:\ncreate file array-length\nsort file algorithm\n");
-      return 2;
+        create_file(file_name, count);
+        printf("%s file successfully created\n", file_name);
+        exit(0);
+        break;
+
+      // sort: sorts file of ints with algorithm used as arg
+      case 's':
+        if (argc != 4) {
+          usage();
+        }
+        file_name = optarg;
+        algorithm = argv[3];
+        //bool exists = check_alg(algorithm);
+        outer_array = load_array(file_name, &len);
+        break;
+
+      // if unknown char is 'c' or 's', show usage for those flags
+      case '?':
+        if (optopt == 'c') {
+          fprintf(stderr, "Option -%c requires two arguments, file and file-size\n", optopt);
+        } else if (optopt == 's') {
+          fprintf(stderr, "Option -%c requires two arguments, file and algorithm\n", optopt);
+        } else {
+          fprintf(stderr, "Unknown option character '-%c.\n", optopt);
+        }
+        return 1;
+      default:
+        usage();
     }
-    create_file(file_out, length);
-    printf("%s file successfully created\n", file_out);
-    return 0;
   }
 
-// SORTING
-  else if (strcmp(command, "sort") == 0 && argc == 4) { // set to 4 after testing
-    char *infile = argv[2];
-    outer_array = load_array(infile, &len);
-    char *algorithm = argv[3];
 
 // SHELLSORT
       if (strcmp(algorithm, "shellsort") == 0) {
@@ -148,21 +170,7 @@ int main(int argc, char *argv[])
 // wrong sort
       else {
         printf("ERROR: %s is not available as an option. You can add your own to the files\n", algorithm);
-        return 3;
+        exit(1);
       }
-  }
-
-  else {
-    printf("Usage: arraymaker\n");
-    printf("\t\tcreate num-of-elements file.txt\n");
-    printf("\t\tsort file.txt algorithm\n");
-    return 3;
-  }
-  // no printing for now
-  /*
-  for (i = 0; i < len; ++i) {
-    printf("%d: %d\n", i+1, *(outer_array + i));
-  } 
-  */
   return 0;
 }
