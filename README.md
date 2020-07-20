@@ -26,17 +26,17 @@ Once installed, Arraymaker can be used from any directory like any other command
 ## Commands
 
 ```
-arraymaker <command> [arg-file] [arg2]
+arraymaker <options> [arg-file] [arg2]
 ```
 
-In short, the commands are ```create``` and ```sort```. The first argument is always the file to be used/created. The second argument depends on the command. If ```create``` then [arg2] will be the array length. If ```sort``` then [arg2] will be the algorithm chosen to sort the array.
+In short, the options are ```-c``` for create and ```-s``` for sort. The first argument is always the file to be used/created. The second argument depends on the command. If ```-c``` then [arg2] will be the array length. If ```-s``` then [arg2] will be the algorithm chosen to sort the array.
 
 ### create
 
-```create``` creates the file which holds the numbers to load into the array. This is the first step and has to be done before using the ```sort``` command.
+```-c``` creates the file which holds the numbers to load into the array. This is the first step and has to be done before using the ```-c``` option.
 
 ```
-$ arraymaker create file array-length
+$ arraymaker -c file array-length
 ```
 
 ```file```: you can name this anything you want. It becomes the name of the file created that hold the numbers for reusing the array. You don't need to use a file extension but you can if you want to. Most file types seem to work fine.
@@ -45,20 +45,24 @@ $ arraymaker create file array-length
 
 ### sort
 
-```sort``` loads the numbers from the number file into an array then uses it with the algorithm in the argument.
+```-s``` loads the numbers from the number file into an array then uses it with the algorithm in the argument.
 
 ```
-$ arraymaker sort file algorithm
+$ arraymaker -s file algorithm
 ```
 ```algorithm``` is just the name of the algorithm to use. Currently, the algorithms available for use are bubblesort, shellsort, gnomesort, and quicksort. So type any of those in and as long and there's no typo, it'll sort accordingly.
 
 ### Adding more algorithms
 
-There is a directory called 'algorithms' that holds the algorithms. You can add your own to the folder or change what I have there. To add your own, you'll need to add the function prototype to the ```arraymaker.h``` file, add the file name to the ```Makefile```, and lastly, add it to the commands in the ```main.c``` file.
+There is a directory called 'algorithms' that holds the algorithms. You can add your own to the folder or change what I have there. To add your own, you'll need to add the function prototype to the ```arraymaker.h``` file, you don't need to add the file name to the ```Makefile```, and lastly, add it to the commands in the ```main.c``` file.
 
 To get a sense of how this works, comparing the quicksort and bubble sort algorithms, quicksort is able to sort an array of 400,000 elements in about 0.5 seconds while bubblesort takes about 108 seconds to sort the same array. 
 
 ### TODO:
+- create a function to  call the sorting functions in order to clean up main.c
+
+- have the algorithm files act as libraries/plugins rather than something that needs to be part of the program
+
 - Add more algorithms
 
 - Make it possible to create and test partially sorted arrays and mostly sorted arrays
