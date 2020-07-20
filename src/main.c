@@ -17,6 +17,15 @@
 #include <time.h> 
 #include "arraymaker.h"
 
+static void usage() {
+  printf("\narraymaker [options] <arguments>\n");
+  printf("\nCreate large arrays of randomly sorted numbers to use for learning about algorithm timing.\n");
+  printf("\n\t-c - Create file of numbers. Arguments: <file-name> <length of array>\n");
+  printf("\t-s - Sort. Arguments: <file> <algorithm>\n");
+  printf("\t-h - print out this information.\n\n");
+  exit(EXIT_FAILURE);
+}
+
 int main(int argc, char *argv[])
 {
 
