@@ -73,13 +73,7 @@ int main(int argc, char **argv)
 
       // if unknown char is 'c' or 's', show usage for those flags
       case '?':
-        if (optopt == 'c') {
-          fprintf(stderr, "Option -%c requires two arguments, file and file-size\n", optopt);
-        } else if (optopt == 's') {
-          fprintf(stderr, "Option -%c requires two arguments, file and algorithm\n", optopt);
-        } else {
-          fprintf(stderr, "Unknown option character '-%c.\n", optopt);
-        }
+        fprintf(stderr, "Unknown option character '-%c.\n", optopt);
         return 1;
       default:
         usage();
