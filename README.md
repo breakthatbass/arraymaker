@@ -65,4 +65,6 @@ To get a sense of how this works, comparing the quicksort and bubble sort algori
 
 - Add more algorithms
 
-- Make it possible to create and test partially sorted arrays and mostly sorted arrays
+- Make it possible to create and test partially sorted arrays and mostly sorted arrays.
+
+- Add searching algorithm functionality
