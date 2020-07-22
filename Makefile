@@ -4,7 +4,7 @@ PREFIX=/usr/local
 SRC_FILES=$(wildcard src/*.c algorithms/*.c)
 
 ifndef NAME
-    NAME=arraymaker
+    NAME=arrmkr
 endif
 
 all: $(NAME)
