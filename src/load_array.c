@@ -25,6 +25,10 @@ int *load_array(char *file, int *file_length)
 
   // allocate memory for the nums array based on the size of the file
   nums = (int*)malloc(file_line_count * sizeof(int));
+  if (nums == NULL) {
+    fprintf(stderr, "Not enough memory. Aborting...\n");
+    exit(1);
+  }
 
   // each line comes in as a char so it needs a char array
   char line[file_line_count][6];
