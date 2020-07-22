@@ -19,7 +19,7 @@
 #include "arraymaker.h"
 
 static void usage() {
-  printf("\narraymaker [options] <arguments>\n");
+  printf("\narrmkr [options] <arguments>\n");
   printf("\nCreate large arrays of randomly sorted numbers to use for learning about algorithm timing.\n");
   printf("\n\t-c - Create file of numbers. Arguments: <file-name> <length of array>\n");
   printf("\t-s - Sort. Arguments: <file> <algorithm>\n");
