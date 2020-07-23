@@ -35,14 +35,10 @@ int *load_array(char *file, int *file_length)
 
   // go through each line in file and append to line array
   i = 0;
-  while (fgets(line[i], file_line_count, fp)) {
-    line[i][strlen(line[i]) - 1] = '\0';
-    i++;
-  }
-
-  // convert each element to int and copy into nums array
-  for (i = 0; i < file_line_count; ++i) {
-        nums[i] = atoi(line[i]);
+  while (fgets(line[i], 7, fp)) {
+      // convert to int and append to nums array
+      nums[i] = atoi(line[i]);
+      i++;
   }
   fclose(fp);
   
