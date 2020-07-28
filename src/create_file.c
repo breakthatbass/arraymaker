@@ -19,7 +19,7 @@ void create_file(char *file, int len)
 
   if (len > 9999999) {
     // this prevents attempts to make outrageously huge numbers which cause a seg fault
-    fprintf(stderr, "%d is too big. The number needs to be 9999999 or smaller\n", len);
+    fprintf(stderr, "Number is too big. The number needs to be 9999999 or smaller\n");
     exit(EXIT_FAILURE);
   }
 
