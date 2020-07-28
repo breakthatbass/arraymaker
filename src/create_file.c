@@ -27,7 +27,8 @@ void create_file(char *file, int len)
   srand(time(0)); // seed for generating random number
   for (i = 0; i < len; i++) {
     // generate random number
-    number = rand() % (upper - lower + 1) + lower;
+    //number = rand() % (upper - lower + 1) + lower;
+    number = (rand() % upper) + 1;
     // then write to file
     fprintf(fp, "%d\n", number);
   }

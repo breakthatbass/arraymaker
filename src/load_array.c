@@ -8,6 +8,8 @@
 #include <stdlib.h>
 #include "arraymaker.h"
 
+#define MAX_LINE 7
+
 int *load_array(char *file, int *file_length)
 {
   int i, file_line_count;
@@ -31,13 +33,13 @@ int *load_array(char *file, int *file_length)
   }
 
   // each line comes in as a char so it needs a char array
-  char line[file_line_count][6];
+  char line[MAX_LINE];
 
   // go through each line in file and append to line array
   i = 0;
-  while (fgets(line[i], 7, fp)) {
+  while (fgets(line, MAX_LINE, fp)) {
       // convert to int and append to nums array
-      nums[i] = atoi(line[i]);
+      nums[i] = atoi(line);
       i++;
   }
   fclose(fp);
