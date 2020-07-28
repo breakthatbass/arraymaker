@@ -22,6 +22,7 @@ void create_file(char *file, int len)
   fp = fopen(file, "w");
   if (fp == NULL) {
       printf("Could not open file %s\n", file);
+      exit(EXIT_FAILURE);
   }
 
   srand(time(0)); // seed for generating random number
