@@ -23,9 +23,8 @@ int *load_array(char *file, int *file_length)
   }
 
   file_line_count = count_lines(file); //get the amount of lines from file
-  *file_length = file_line_count;
+  *file_length = file_line_count; 
 
-  // allocate memory for the nums array based on the size of the file
   nums = (int*)malloc(file_line_count * sizeof(int));
   if (nums == NULL) {
     fprintf(stderr, "Not enough memory. Aborting...\n");
