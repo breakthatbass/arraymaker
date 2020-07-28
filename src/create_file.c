@@ -19,7 +19,7 @@ void create_file(char *file, int len)
   upper = 99999;
 
   if (len > 9999999) {
-    fprintf(stderr, "%d is too big. Try a smaller number\n", len);
+    fprintf(stderr, "%d is too big. The number needs to be 9999999 or smaller\n", len);
     exit(EXIT_FAILURE);
   }
 
