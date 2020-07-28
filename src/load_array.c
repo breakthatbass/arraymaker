@@ -18,8 +18,8 @@ int *load_array(char *file, int *file_length)
 
   FILE *fp = fopen(file, "r");
   if (fp == NULL) {
-    printf("could not open file %s\n", file);
-    exit(1);
+    fprintf(stderr, "could not open file %s\n", file);
+    exit(EXIT_FAILURE);
   }
 
   file_line_count = count_lines(file); //get the amount of lines from file
@@ -29,7 +29,7 @@ int *load_array(char *file, int *file_length)
   nums = (int*)malloc(file_line_count * sizeof(int));
   if (nums == NULL) {
     fprintf(stderr, "Not enough memory. Aborting...\n");
-    exit(1);
+    exit(EXIT_FAILURE);
   }
 
   // each line comes in as a char so it needs a char array

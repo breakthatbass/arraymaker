@@ -163,8 +163,8 @@ int main(int argc, char **argv)
 
 // wrong sort
       else {
-        printf("ERROR: %s is not available as an option. You can add your own to the files\n", algorithm);
-        exit(1);
+        fprintf(stderr, "ERROR: %s is not available as an option. You can add your own to the files\n", algorithm);
+        return 1;
       }
   return 0;
 }

@@ -3,6 +3,7 @@
   and returns the number of lines in file
 */
 #include <stdio.h>
+#include <stdlib.h>
 
 int count_lines(char *file)
 {
@@ -12,8 +13,8 @@ int count_lines(char *file)
 
   fp = fopen(file, "r");
   if (fp == NULL) {
-      printf("Could not open file in count lines %s\n", file);
-      return 1;
+      fprintf(stderr, "Could not open file %s\n", file);
+      exit(EXIT_FAILURE);
   }
 
   // Extract characters from file and store in char c

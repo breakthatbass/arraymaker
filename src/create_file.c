@@ -26,7 +26,7 @@ void create_file(char *file, int len)
   // open file in append mode
   fp = fopen(file, "w");
   if (fp == NULL) {
-      printf("Could not open file %s\n", file);
+      fprintf(stderr, "Could not open file %s\n", file);
       exit(EXIT_FAILURE);
   }
 
