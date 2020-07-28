@@ -18,6 +18,11 @@ void create_file(char *file, int len)
   lower = 0;
   upper = 99999;
 
+  if (len > 9999999) {
+    fprintf(stderr, "%d is too big. Try a smaller number\n", len);
+    exit(EXIT_FAILURE);
+  }
+
   // open file in append mode
   fp = fopen(file, "w");
   if (fp == NULL) {
