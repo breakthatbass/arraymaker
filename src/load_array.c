@@ -31,10 +31,8 @@ int *load_array(char *file, int *file_length)
     exit(EXIT_FAILURE);
   }
 
-  // each line comes in as a char so it needs a char array
   char line[MAX_LINE];
 
-  // go through each line in file and append to line array
   i = 0;
   while (fgets(line, MAX_LINE, fp)) {
       // convert to int and append to nums array
