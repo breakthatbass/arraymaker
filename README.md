@@ -1,3 +1,6 @@
+![ArayMaker logo](logo.png)
+
+
 # Arraymaker
 
 Arraymaker is used to create very large arrays of random numbers that are randomly sorted for the purpose of using them to learn about timing with sorting algorithms. Arraymaker has built in timing.
