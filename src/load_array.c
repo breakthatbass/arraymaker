@@ -6,6 +6,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
+#include <ctype.h>
 #include "arraymaker.h"
 
 #define MAX_LINE 7
@@ -34,10 +35,14 @@ int *load_array(char *file, int *file_length)
   char line[MAX_LINE];
 
   i = 0;
-  while (fgets(line, MAX_LINE, fp)) {
-      // convert to int and append to nums array
-      nums[i] = atoi(line);
-      i++;
+  while (fgets(line, MAX_LINE, fp)) { 
+    if (isalpha(line[0]) == 1) {
+        fprintf(stderr, "error: problem with file\n");
+        exit(EXIT_FAILURE);
+     }
+     // convert to int and append to nums array
+    nums[i] = atoi(line);
+    i++;
   }
   fclose(fp);
   
