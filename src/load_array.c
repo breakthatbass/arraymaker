@@ -36,7 +36,8 @@ int *load_array(char *file, int *file_length)
 
   i = 0;
   while (fgets(line, MAX_LINE, fp)) { 
-    if (isalpha(line[0]) == 1) {
+    // make sure file isn't a text file
+    if (isalpha(line[0])) {
         fprintf(stderr, "error: problem with file\n");
         exit(EXIT_FAILURE);
      }
