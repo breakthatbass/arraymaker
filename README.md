@@ -1,7 +1,4 @@
-![ArayMaker logo](logo.png)
-
-
-
+# ArrayMaker
 
 Arraymaker is used to create very large arrays of random numbers that are randomly sorted for the purpose of using them to learn about timing with sorting algorithms. Arraymaker has built in timing.
 
@@ -11,13 +8,12 @@ The bigger the arrays to sort are, the more noticable the time differences can b
 
 Arraymaker creates arrays that are sized based on user input so they can be 20 elements or 400,000 elements and potentially more. Since the program saves the array in a file, the same unsorted array can used with different algorithms to return more useful times when comparing them.
 
-Read the article about it [here](https://breakthatbass.github.io/portfolio2020/blog/arraymaker.html).
 
 ## installation
 ```
 $ git clone https://github.com/breakthatbass/arraymaker.git
 
-$ cd arraymker
+$ cd arraymaker
 
 $ make install
 ```
@@ -65,8 +61,6 @@ To get a sense of how this works, comparing the quicksort and bubble sort algori
 
 ### TODO:
 - create a function to call the sorting functions in order to clean up main.c
-
-- have the algorithm files act as libraries/plugins rather than something that needs to be part of the program
 
 - Add more algorithms
 
